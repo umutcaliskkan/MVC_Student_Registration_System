@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "YeniDers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group"> @*controllerdaki post mothodu kullanıldı*@ 
+    <div>
+        <label>Ders Adı</label>
+        <input type="text" class="form-control" name="DERSAD" /> @*textbox oluşturuldu ve Tablodaki DERSAD name a yazıldı*@
+    </div>
+
+    <div style="margin-top:10px"> 
+        <button class="btn btn-info">Ders Ekle</button>
+    </div>
+</form>
+

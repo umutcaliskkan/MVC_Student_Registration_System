@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "YeniSinav";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    @*controllerdaki post mothodu kullanıldı*@
+    <div>
+        <label>Öğrenci ID</label>
+        <input type="text" class="form-control" name="OGRID" /> @*textbox oluşturuldu ve Tablodaki OGRID name a yazıldı*@
+    </div>
+    <div style="margin-top:10px">
+        <label>Ders Adı</label>
+        <input type="text" class="form-control" name="DERSID" /> @*textbox oluşturuldu ve Tablodaki DERSID name a yazıldı*@
+    </div>
+    <div style="margin-top:10px">
+        <label>Sınav 1</label>
+        <input type="text" class="form-control" name="SINAV1" /> @*textbox oluşturuldu ve Tablodaki SINAV1 name a yazıldı*@
+    </div>
+    <div style="margin-top:10px">
+        <label>Sınav 2</label>
+        <input type="text" class="form-control" name="SINAV2" /> @*textbox oluşturuldu ve Tablodaki SINAV2 name a yazıldı*@
+    </div>
+    <div style="margin-top:10px">
+        <label>Sınav 3</label>
+        <input type="text" class="form-control" name="SINAV3" /> @*textbox oluşturuldu ve Tablodaki SINAV3 name a yazıldı*@
+    </div>
+    <div style="margin-top:10px">
+        <label>Proje</label>
+        <input type="text" class="form-control" name="PROJE" /> @*textbox oluşturuldu ve Tablodaki PROJE name a yazıldı*@
+    </div>
+    <div style="margin-top:10px">
+        <label>Ortalama</label>
+        <input type="text" class="form-control" name="ORTALAMA" /> @*textbox oluşturuldu ve Tablodaki ORTALAMA name a yazıldı*@
+    </div>
+    <div style="margin-top:10px">
+        <label>Durum</label>
+        <input type="text" class="form-control" name="DURUM" /> @*textbox oluşturuldu ve Tablodaki DURUM name a yazıldı*@
+    </div>
+
+
+
+    <div style="margin-top:10px">
+        <button class="btn btn-primary">Sınav Ekle</button>
+    </div>
+</form>

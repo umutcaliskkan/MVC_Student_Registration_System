@@ -1,0 +1,36 @@
+﻿@using OgrenciKayitSistemiMvc.Models.EntityFramework <!-- Kütüphane çağırıldı -->
+@model List<TBLOGRENCILER>
+<!-- Liste oluşturulup içine tblöğrenciler eklendi ve model degiskenine atandı -->
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <table class="table table-bordered">
+        @*tablo oluşturuldu*@
+        <tr>
+            <th>ÖĞRENCİ ID</th>
+            <th>ADI</th>
+            <th>SOYADI</th>
+            <th>CİNSİYET</th>
+            <th>KULÜP</th>
+            <th>İŞLEMLER</th>
+        </tr>
+        <tbody>
+            @*klp degisken oluşturuldu ve model degiskenini döngü ile gezip tablo satırlarına yazdırdı*@
+            @foreach (var ogr in Model)
+            { 
+            <tr>
+                <td>@ogr.OGRENCIID</td>
+                <td>@ogr.OGRAD</td>
+                <td>@ogr.OGRSOYAD</td>
+                <td>@ogr.OGRCINSIYET</td>
+                <td>@ogr.TBLKULUPLER.KULUPAD</td>
+                <td><a href="/Ogrenci/Sil/@ogr.OGRENCIID" class="btn btn-danger">Sil</a>
+                <a href="/Ogrenci/OgrenciGetir/@ogr.OGRENCIID" class="btn btn-success">Güncelle</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Ogrenci/YeniOgrenci" class="btn btn-primary">Yeni Öğrenci Ekle</a>

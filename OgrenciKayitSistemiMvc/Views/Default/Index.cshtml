@@ -1,0 +1,31 @@
+﻿@using OgrenciKayitSistemiMvc.Models.EntityFramework <!-- Kütüphane çağırıldı -->
+@model List<TBLDERSLER>
+<!-- Liste oluşturulup içine tbldersler eklendi ve model degiskenine atandı -->
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>DERS ID</th>
+        <th>DERS AD</th>
+        <th>İşlemler</th>
+    </tr>
+    <tbody>
+        <!-- drs adlı degişken oluşturuldu ve model degiskenini yani listeyi gezdi ve bilgileri aldı -->
+        @foreach (var drs in Model)
+        {
+        <tr>
+            <td>@drs.DERSID</td>
+            <td>@drs.DERSAD</td>
+            <td><a href="/Default/Sil/@drs.DERSID" class="btn btn-danger">Sil</a>
+            <a href="/Default/DersGetir/@drs.DERSID" class="btn btn-success">Güncelle</a> 
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Default/YeniDers" class="btn btn-primary">Yeni Ders Kaydı</a>   
+

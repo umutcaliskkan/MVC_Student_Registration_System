@@ -1,0 +1,32 @@
+﻿@using OgrenciKayitSistemiMvc.Models.EntityFramework <!-- Kütüphane çağırıldı -->
+@model List<TBLKULUPLER>
+<!-- Liste oluşturulup içine tblkulupler eklendi ve model degiskenine atandı -->
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    @*tablo oluşturuldu*@
+    <tr>
+        <th>KULÜP ID</th>
+        <th>KULÜP ADI</th>
+        <th>İşlemler</th>
+    </tr>
+    <tbody>
+        @*klp degisken oluşturuldu ve model degiskenini döngü ile gezip tablo satırlarına yazdırdı*@
+        @foreach (var klp in Model)
+        {
+            <tr>
+                <td>@klp.KULUPID</td>
+                <td>@klp.KULUPAD</td>
+                <td><a href="/Kulupler/Sil/@klp.KULUPID" class="btn btn-danger">Sil</a>
+                <a href="/Kulupler/KulupGetir/@klp.KULUPID" class="btn btn-success" >Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<a href="/Kulupler/YeniKulup" class="btn btn-primary">Yeni Kulüp Ekle</a>
+
